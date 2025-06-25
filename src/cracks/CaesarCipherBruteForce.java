@@ -4,7 +4,6 @@ public class CaesarCipherBruteForce {
     private String alphabet = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     public CaesarCipherBruteForce() {
-
     }
 
     public CaesarCipherBruteForce(String alphabet) {

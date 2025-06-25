@@ -16,6 +16,10 @@ public class CaesarCipher {
         this.key = key;
     }
 
+    public String getAlphabet() {
+        return alphabet;
+    }
+
     public String encrypt(String plainText) {
         String cipherText = "";
 

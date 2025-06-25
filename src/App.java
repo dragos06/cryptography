@@ -1,4 +1,5 @@
 import algorithms.CaesarCipher;
+import cracks.CaesarCipherBruteForce;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -11,5 +12,8 @@ public class App {
         String newPlainText = cc.decrypt(cipherText);
         System.out.println(cipherText);
         System.out.println(newPlainText);
+
+        CaesarCipherBruteForce ccbf = new CaesarCipherBruteForce(cc.getAlphabet());
+        ccbf.crack(cipherText);
     }
 }

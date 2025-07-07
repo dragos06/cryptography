@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FrequencyAnalysis {
-    private String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private String alphabet = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     public FrequencyAnalysis() {
     }
@@ -13,7 +13,7 @@ public class FrequencyAnalysis {
         this.alphabet = alphabet;
     }
 
-    private Map<Character, Integer> run(String text) {
+    public Map<Character, Integer> run(String text) {
         text = text.toUpperCase();
 
         Map<Character, Integer> frequencies = new HashMap<Character, Integer>();

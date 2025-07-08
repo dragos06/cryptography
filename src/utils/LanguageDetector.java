@@ -27,6 +27,6 @@ public class LanguageDetector {
     public boolean isEnglish(String text) {
         int matches = this.numberEnglishWords(text);
 
-        return (float) matches / text.split(" ").length * 100 >= 70;
+        return (float) matches / text.toUpperCase().split(" ").length * 100 >= 70;
     }
 }

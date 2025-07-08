@@ -1,5 +1,7 @@
 package cracks;
 
+import utils.LanguageDetector;
+
 public class CaesarCipherBruteForce {
     private String alphabet = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -11,6 +13,8 @@ public class CaesarCipherBruteForce {
     }
 
     public void crack(String cipherText) {
+        LanguageDetector languageDetector = new LanguageDetector();
+
         for (int key = 1; key < this.alphabet.length(); key++) {
             String plainText = "";
 
@@ -28,7 +32,9 @@ public class CaesarCipherBruteForce {
                 plainText += plainLetter;
             }
 
-            System.out.println(String.format("Key %d: %s", key, plainText));
+            if (languageDetector.isEnglish(plainText)) {
+                System.out.println(String.format("Key %d: %s", key, plainText));
+            }
         }
     }
 }

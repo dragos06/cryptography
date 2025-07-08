@@ -1,7 +1,6 @@
 import algorithms.CaesarCipher;
 import cracks.CaesarCipherBruteForce;
 import cracks.CaesarCipherFrequencyAnalysis;
-import utils.FrequencyAnalysis;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -19,9 +18,6 @@ public class App {
 
         CaesarCipherBruteForce ccbf = new CaesarCipherBruteForce(cc.getAlphabet());
         ccbf.crack(cipherText);
-
-        FrequencyAnalysis fa = new FrequencyAnalysis();
-        fa.showFrequencies(plainText);
 
         CaesarCipherFrequencyAnalysis ccfa = new CaesarCipherFrequencyAnalysis();
         ccfa.crack(cipherText);

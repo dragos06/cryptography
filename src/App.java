@@ -1,12 +1,15 @@
 import algorithms.CaesarCipher;
+import algorithms.OneTimePass;
 import algorithms.VigenereCipher;
 import cracks.CaesarCipherBruteForce;
 import cracks.CaesarCipherFrequencyAnalysis;
+import utils.RandomGenerator;
 
 public class App {
     public static void main(String[] args) throws Exception {
         // caesarCipher();
-        vigenereCipher();
+        // vigenereCipher();
+        oneTimePass();
     }
 
     private static void caesarCipher() {
@@ -32,6 +35,17 @@ public class App {
         String key = "FOOBAR";
         String cipherText = vg.encrypt(plainText, key);
         String newPlainText = vg.decrypt(cipherText, key);
+        System.out.println(cipherText);
+        System.out.println(newPlainText);
+    }
+
+    private static void oneTimePass() {
+        String plainText = "This is just an example in order to check if the encryption and decryption of the algorithm works";
+        RandomGenerator randomGenerator = new RandomGenerator();
+        int[] randomKey = randomGenerator.generate(plainText.length());
+        OneTimePass otp = new OneTimePass();
+        String cipherText = otp.encrypt(plainText, randomKey);
+        String newPlainText = otp.decrypt(cipherText, randomKey);
         System.out.println(cipherText);
         System.out.println(newPlainText);
     }

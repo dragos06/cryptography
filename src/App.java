@@ -1,4 +1,5 @@
 import algorithms.CaesarCipher;
+import algorithms.DataEncryptionStandard;
 import algorithms.OneTimePass;
 import algorithms.VigenereCipher;
 import cracks.CaesarCipherBruteForce;
@@ -9,7 +10,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         // caesarCipher();
         // vigenereCipher();
-        oneTimePass();
+        //oneTimePass();
+        dataEncryptionStandard();
     }
 
     private static void caesarCipher() {
@@ -46,6 +48,15 @@ public class App {
         OneTimePass otp = new OneTimePass();
         String cipherText = otp.encrypt(plainText, randomKey);
         String newPlainText = otp.decrypt(cipherText, randomKey);
+        System.out.println(cipherText);
+        System.out.println(newPlainText);
+    }
+
+    private static void dataEncryptionStandard() {
+        DataEncryptionStandard dae = new DataEncryptionStandard();
+        String plainText = "This is just an example in order to check if the encryption and decryption of the algorithm works";
+        String cipherText = dae.encrypt(plainText);
+        String newPlainText = dae.decrypt(cipherText);
         System.out.println(cipherText);
         System.out.println(newPlainText);
     }

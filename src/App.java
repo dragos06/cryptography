@@ -1,3 +1,4 @@
+import algorithms.AdvancedEncryptionStandard;
 import algorithms.CaesarCipher;
 import algorithms.DataEncryptionStandard;
 import algorithms.OneTimePass;
@@ -10,8 +11,9 @@ public class App {
     public static void main(String[] args) throws Exception {
         // caesarCipher();
         // vigenereCipher();
-        //oneTimePass();
-        dataEncryptionStandard();
+        // oneTimePass();
+        // dataEncryptionStandard();
+        advancedEncryptionStandard();
     }
 
     private static void caesarCipher() {
@@ -53,10 +55,19 @@ public class App {
     }
 
     private static void dataEncryptionStandard() {
-        DataEncryptionStandard dae = new DataEncryptionStandard();
+        DataEncryptionStandard das = new DataEncryptionStandard();
         String plainText = "This is just an example in order to check if the encryption and decryption of the algorithm works";
-        String cipherText = dae.encrypt(plainText);
-        String newPlainText = dae.decrypt(cipherText);
+        String cipherText = das.encrypt(plainText);
+        String newPlainText = das.decrypt(cipherText);
+        System.out.println(cipherText);
+        System.out.println(newPlainText);
+    }
+
+    private static void advancedEncryptionStandard() {
+        AdvancedEncryptionStandard aes = new AdvancedEncryptionStandard();
+        String plainText = "This is just an example in order to check if the encryption and decryption of the algorithm works";
+        String cipherText = aes.encrypt(plainText);
+        String newPlainText = aes.decrypt(cipherText);
         System.out.println(cipherText);
         System.out.println(newPlainText);
     }

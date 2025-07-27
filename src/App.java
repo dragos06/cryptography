@@ -13,7 +13,7 @@ public class App {
         // vigenereCipher();
         // oneTimePass();
         // dataEncryptionStandard();
-        advancedEncryptionStandard();
+        // advancedEncryptionStandard();
     }
 
     private static void caesarCipher() {

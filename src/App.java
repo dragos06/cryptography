@@ -1,10 +1,16 @@
+import java.math.BigInteger;
+import java.util.Random;
+
 import algorithms.AdvancedEncryptionStandard;
 import algorithms.CaesarCipher;
 import algorithms.DataEncryptionStandard;
+import algorithms.EllipticCurveCryptography;
 import algorithms.OneTimePass;
+import algorithms.RSA;
 import algorithms.VigenereCipher;
 import cracks.CaesarCipherBruteForce;
 import cracks.CaesarCipherFrequencyAnalysis;
+import utils.Point;
 import utils.RandomGenerator;
 
 public class App {
@@ -14,6 +20,8 @@ public class App {
         // oneTimePass();
         // dataEncryptionStandard();
         // advancedEncryptionStandard();
+        // rsa();
+        // ecc();
     }
 
     private static void caesarCipher() {
@@ -70,5 +78,34 @@ public class App {
         String newPlainText = aes.decrypt(cipherText);
         System.out.println(cipherText);
         System.out.println(newPlainText);
+    }
+
+    private static void rsa() {
+        RSA rsa = new RSA();
+        String plainText = "This is just an example in order to check if the encryption and decryption of the algorithm works";
+        rsa.generateKeys(1024);
+        BigInteger cipherText = rsa.encryptMessage(plainText);
+        String newPlainText = rsa.decryptMessage(cipherText);
+        System.out.println(cipherText);
+        System.out.println(newPlainText);
+    }
+
+    private static void ecc() {
+        EllipticCurveCryptography ecc = new EllipticCurveCryptography(3, 7);
+        Point generator = new Point(-2, 1);
+
+        Random random = new Random();
+
+        int a = random.nextInt(10000);
+        int b = random.nextInt(10000);
+
+        Point aPublicKey = ecc.doubleAndAdd(a, generator);
+        Point bPublicKey = ecc.doubleAndAdd(b, generator);
+
+        Point aPrivateKey = ecc.doubleAndAdd(a, bPublicKey);
+        Point bPrivateKey = ecc.doubleAndAdd(b, aPublicKey);
+
+        System.out.println(aPrivateKey);
+        System.out.println(bPrivateKey);
     }
 }

@@ -5,8 +5,10 @@ import algorithms.AdvancedEncryptionStandard;
 import algorithms.CaesarCipher;
 import algorithms.DataEncryptionStandard;
 import algorithms.EllipticCurveCryptography;
+import algorithms.MD5;
 import algorithms.OneTimePass;
 import algorithms.RSA;
+import algorithms.SHA256;
 import algorithms.VigenereCipher;
 import cracks.CaesarCipherBruteForce;
 import cracks.CaesarCipherFrequencyAnalysis;
@@ -15,13 +17,15 @@ import utils.RandomGenerator;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // caesarCipher();
-        // vigenereCipher();
-        // oneTimePass();
-        // dataEncryptionStandard();
-        // advancedEncryptionStandard();
-        // rsa();
-        // ecc();
+        caesarCipher();
+        vigenereCipher();
+        oneTimePass();
+        dataEncryptionStandard();
+        advancedEncryptionStandard();
+        rsa();
+        ecc();
+        md5();
+        sha256();
     }
 
     private static void caesarCipher() {
@@ -107,5 +111,17 @@ public class App {
 
         System.out.println(aPrivateKey);
         System.out.println(bPrivateKey);
+    }
+
+    private static void md5() {
+        MD5 md5 = new MD5();
+        String message = "This is an example to check if the hashing alg works";
+        System.out.println(md5.digest(message));
+    }
+
+    private static void sha256() {
+        SHA256 sha256 = new SHA256();
+        String message = "This is an example to check if the hashing alg works";
+        System.out.println(sha256.digest(message));
     }
 }

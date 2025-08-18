@@ -8,10 +8,10 @@ A comprehensive Java implementation of various cryptographic algorithms, includi
 - [Features](#-features)
 - [Algorithms Implemented](#-algorithms-implemented)
 - [Cryptanalysis Tools](#-cryptanalysis-tools)
-- [Utility Classes](#-utility-classes)
+- [Utility Classes](#️-utility-classes)
 - [Getting Started](#-getting-started)
 - [Usage Examples](#-usage-examples)
-- [Security Disclaimer](#-security-disclaimer)
+- [Security Disclaimer](#️-security-disclaimer)
 
 ## 🔍 Overview
 

@@ -4,14 +4,14 @@ A comprehensive Java implementation of various cryptographic algorithms, includi
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Algorithms Implemented](#algorithms-implemented)
-- [Cryptanalysis Tools](#cryptanalysis-tools)
-- [Utility Classes](#utility-classes)
-- [Getting Started](#getting-started)
-- [Usage Examples](#usage-examples)
-- [Security Disclaimer](#security-disclaimer)
+- [Overview](#-overview)
+- [Features](#-features)
+- [Algorithms Implemented](#-algorithms-implemented)
+- [Cryptanalysis Tools](#-cryptanalysis-tools)
+- [Utility Classes](#-utility-classes)
+- [Getting Started](#-getting-started)
+- [Usage Examples](#-usage-examples)
+- [Security Disclaimer](#-security-disclaimer)
 
 ## 🔍 Overview
 
